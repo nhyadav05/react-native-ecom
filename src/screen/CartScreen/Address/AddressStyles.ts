@@ -7,27 +7,32 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 15,
+    padding: 16,
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd', // Added border for the header
+    borderBottomColor: '#ddd',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 2,
   },
   backIcon: {
     width: 24,
     height: 24,
-    marginRight: 12,
-    tintColor:'black'
+    tintColor: '#00529D',
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 8,
+    color: '#00529D',
   },
   plusIcon: { 
     width: 24, 
     height: 24, 
     fontWeight: 'bold',
     marginRight: 8, // Reduced margin to align with the text
-  },
-  headerTitle: {
-    color: 'black',
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginLeft: 8,
   },
   addNewAddressContainer: {
     marginBottom: 20, // Increased margin bottom for the "Add New Address" section

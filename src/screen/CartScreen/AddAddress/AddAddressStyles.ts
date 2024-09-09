@@ -9,18 +9,26 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 15,
-    backgroundColor: '#00529D',
+    padding: 16,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 2,
   },
-  backArrow: {
-    color: '#FFF',
-    fontSize: 20,
-    marginRight: 10,
+  backIcon: {
+    width: 24,
+    height: 24,
+    tintColor: '#00529D',
   },
   headerTitle: {
-    color: '#FFF',
     fontSize: 18,
     fontWeight: 'bold',
+    marginLeft: 8,
+    color: '#00529D',
   },
   formContainer: {
     padding: 15,

@@ -179,20 +179,25 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 2,
+  },
+  backIcon: {
+    width: 24,
+    height: 24,
+    tintColor: '#00529D',
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginLeft: 8,
-  },
-  backIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 12,
-    tintColor:'black'
+    color: '#00529D',
   },
   stepperContainer: {
     paddingVertical: 12,

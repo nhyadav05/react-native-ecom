@@ -223,6 +223,7 @@ import {
   FlatList,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import OrderStatusTracker from './OrderStatusTracker';
 
 const SummaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const products = [
@@ -233,13 +234,7 @@ const SummaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       description: 'A brief description of the product goes here, highlighting key features and benefits.',
       image: require('../../../assets/product/strawberry-rabbit.webp'),
     },
-    {
-      id: '2',
-      name: 'Sample Product 2',
-      price: '₹899',
-      description: 'Another brief description of this product, focusing on its unique selling points.',
-      image: require('../../../assets/product/strawberry-rabbit.webp'),
-    },
+    
   ];
 
   const handleFinish = () => {
@@ -284,36 +279,45 @@ const SummaryScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         </View>
 
         {/* Vertical Stepper */}
-        <View style={styles.stepperContainer}>
+        {/* <View style={styles.stepperContainer}>
           <View style={styles.step}>
-            <Ionicons name="checkmark-circle" size={24} color="#00529D" />
-            <View style={styles.stepTextContainer}>
+            <View style={styles.stepCircleCompleted}>
+              <Ionicons name="checkmark" size={16} color="#fff" />
+            </View>
+            <View style={styles.stepDetails}>
               <Text style={styles.stepTitle}>Order Placed</Text>
               <Text style={styles.stepDate}>August 22, 2024</Text>
             </View>
           </View>
           <View style={styles.step}>
-            <Ionicons name="checkmark-circle" size={24} color="#00529D" />
-            <View style={styles.stepTextContainer}>
+            <View style={styles.stepCircleCompleted}>
+              <Ionicons name="checkmark" size={16} color="#fff" />
+            </View>
+            <View style={styles.stepDetails}>
               <Text style={styles.stepTitle}>Shipped</Text>
               <Text style={styles.stepDate}>August 23, 2024</Text>
             </View>
           </View>
           <View style={styles.step}>
-            <Ionicons name="checkmark-circle-outline" size={24} color="#00529D" />
-            <View style={styles.stepTextContainer}>
+            <View style={styles.stepCircle}>
+              <Ionicons name="ellipse-outline" size={16} color="#00529D" />
+            </View>
+            <View style={styles.stepDetails}>
               <Text style={styles.stepTitle}>Out for Delivery</Text>
               <Text style={styles.stepDate}>August 28, 2024</Text>
             </View>
           </View>
           <View style={styles.step}>
-            <Ionicons name="ellipse-outline" size={24} color="#00529D" />
-            <View style={styles.stepTextContainer}>
+            <View style={styles.stepCircle}>
+              <Ionicons name="ellipse-outline" size={16} color="#00529D" />
+            </View>
+            <View style={styles.stepDetails}>
               <Text style={styles.stepTitle}>Delivered</Text>
               <Text style={styles.stepDate}>Expected August 28, 2024</Text>
             </View>
           </View>
-        </View>
+        </View> */}
+        <OrderStatusTracker/>
 
         {/* Product Details */}
         <View style={styles.productContainer}>
@@ -369,13 +373,13 @@ const styles = StyleSheet.create({
     height: 24,
     tintColor: '#00529D',
   },
-  invoiceIcon: { width: 24, height: 24, marginRight: 12 },
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginLeft: 8,
     color: '#00529D',
   },
+  invoiceIcon: { width: 24, height: 24, marginRight: 12 },
   contentContainer: {
     paddingHorizontal: 16,
     paddingVertical: 24,
@@ -404,13 +408,33 @@ const styles = StyleSheet.create({
   },
   stepperContainer: {
     marginVertical: 24,
+    borderLeftWidth: 2,
+    borderLeftColor: '#00529D',
+    paddingLeft: 16,
   },
   step: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 16,
   },
-  stepTextContainer: {
+  stepCircleCompleted: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: '#00529D',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  stepCircle: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#00529D',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  stepDetails: {
     marginLeft: 12,
   },
   stepTitle: {
